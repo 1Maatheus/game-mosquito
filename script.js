@@ -23,6 +23,7 @@ let cronometro = setInterval(function () {
   if (time < 0) {
     clearInterval(cronometro);
     clearInterval(criaMosquito);
+    location.href = "vitoria.html";
   } else {
     document.getElementById("cronometro").innerHTML = time;
   }
