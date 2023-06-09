@@ -2,6 +2,7 @@
 
 let altura = 0;
 let largura = 0;
+var lifes = 1;
 
 function ajusteTela() {
   altura = innerHeight;
@@ -15,6 +16,15 @@ ajusteTela();
 function criacao() {
   if (document.getElementById("mosquito")) {
     document.getElementById("mosquito").remove();
+
+    if (lifes > 3) {
+      location.href = "fim_jogo.html";
+    } else {
+      document.getElementById("coracao-" + lifes).src =
+        "./assets/coracao_vazio.png";
+
+      lifes++;
+    }
   }
 
   let posX = Math.floor(Math.random() * largura) - 90;
@@ -30,6 +40,9 @@ function criacao() {
   mosquito.style.top = posY + "px";
   mosquito.style.position = "absolute";
   mosquito.id = "mosquito";
+  mosquito.onclick = function () {
+    this.remove();
+  };
 
   document.body.appendChild(mosquito);
 }
