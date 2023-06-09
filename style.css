@@ -66,6 +66,7 @@ body {
 
 @media (max-width: 500px) {
   .inicio {
+    margin-top: 50%;
     width: 50%;
     height: 50%;
   }
