@@ -4,6 +4,17 @@ let altura = 0;
 let largura = 0;
 let lifes = 1;
 let time = 10;
+let dificuldade = location.search;
+dificuldade = dificuldade.replace("?", "");
+let dificuldadeTempo = 1500;
+
+if (dificuldade === "normal") {
+  dificuldadeTempo = 1500;
+} else if (dificuldade === "intermediario") {
+  dificuldadeTempo = 1000;
+} else if (dificuldade === "dificil") {
+  dificuldadeTempo = 750;
+}
 
 function ajusteTela() {
   altura = innerHeight;
@@ -20,6 +31,7 @@ function iniciaJogo() {
     alert("Selecione um nível para iniciar o jogo.");
     return false;
   }
+  location.href = "app.html?" + nivel;
 }
 
 //Criação do cronômetro
@@ -106,6 +118,6 @@ function ladoRandom() {
 
 let criaMosquito = setInterval(function () {
   criacao();
-}, 2000);
+}, dificuldadeTempo);
 
 //=============================
