@@ -9,25 +9,32 @@ function ajusteTela() {
 }
 
 ajusteTela();
+// ------------------------------
 
-let posX = Math.floor(Math.random() * largura) - 90;
-let posY = Math.floor(Math.random() * altura) - 90;
+//Função para criação do mosquito na tela de forma randomica, atualizando um mosquito novo e removendo o antigo.
+function criacao() {
+  if (document.getElementById("mosquito")) {
+    document.getElementById("mosquito").remove();
+  }
 
-posX = posX < 0 ? 0 : posX;
-posY = posY < 0 ? 0 : posY;
+  let posX = Math.floor(Math.random() * largura) - 90;
+  let posY = Math.floor(Math.random() * altura) - 90;
 
-// ---------------------------------------
+  posX = posX < 0 ? 0 : posX;
+  posY = posY < 0 ? 0 : posY;
 
-//Criação de elementos HTML
-let mosquito = document.createElement("img");
-mosquito.src = "./assets/mosca.png";
-mosquito.className = mudaTamanho() + " " + ladoRandom();
-mosquito.style.left = posX + "px";
-mosquito.style.top = posY + "px";
-mosquito.style.position = "absolute";
+  let mosquito = document.createElement("img");
+  mosquito.src = "./assets/mosca.png";
+  mosquito.className = mudaTamanho() + " " + ladoRandom();
+  mosquito.style.left = posX + "px";
+  mosquito.style.top = posY + "px";
+  mosquito.style.position = "absolute";
+  mosquito.id = "mosquito";
 
-document.body.appendChild(mosquito);
+  document.body.appendChild(mosquito);
+}
 
+criacao();
 // ---------------------------------------
 
 // Função para aplicar a mudança na tela dos mosquitos, de forma randomina.
@@ -54,5 +61,12 @@ function ladoRandom() {
     return "lado-b";
   }
 }
+//----------------------------------------------
 
-ladoRandom();
+// Criação do setInterval para mudança na tela do mosquito
+
+setInterval(function () {
+  criacao();
+}, 1000);
+
+//=============================
