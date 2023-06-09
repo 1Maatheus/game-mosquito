@@ -1,3 +1,7 @@
+html {
+  cursor: url(./assets/mata_mosca.png) 30 30, auto;
+}
+
 body {
   background-image: url(./assets/bg.jpg);
   background-repeat: no-repeat;
@@ -47,4 +51,13 @@ body {
   float: left;
   font-size: 20px;
   font-weight: bold;
+}
+
+#tempo {
+  width: 250px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 4px;
+  font-size: 17px;
+  margin-bottom: 10px;
 }
