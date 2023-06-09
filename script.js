@@ -2,7 +2,8 @@
 
 let altura = 0;
 let largura = 0;
-var lifes = 1;
+let lifes = 1;
+let time = 10;
 
 function ajusteTela() {
   altura = innerHeight;
@@ -11,6 +12,21 @@ function ajusteTela() {
 
 ajusteTela();
 // ------------------------------
+
+//Criação do cronômetro
+
+document.getElementById("cronometro").innerHTML = time;
+
+let cronometro = setInterval(function () {
+  time--;
+
+  if (time < 0) {
+    clearInterval(cronometro);
+    clearInterval(criaMosquito);
+  } else {
+    document.getElementById("cronometro").innerHTML = time;
+  }
+}, 1000);
 
 //Função para criação do mosquito na tela de forma randomica, atualizando um mosquito novo e removendo o antigo.
 function criacao() {
@@ -78,8 +94,8 @@ function ladoRandom() {
 
 // Criação do setInterval para mudança na tela do mosquito
 
-setInterval(function () {
+let criaMosquito = setInterval(function () {
   criacao();
-}, 1000);
+}, 2000);
 
 //=============================
