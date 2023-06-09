@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Game Mata Mosquito</title>
+  </head>
+  <body onresize="ajusteTela()">
+    <section class="painel">
+      <section class="vidas">
+        <img
+          id="coracao-1"
+          src="./assets/coracao_cheio.png"
+          alt="Imagem de um coração"
+        />
+        <img
+          id="coracao-2"
+          src="./assets/coracao_cheio.png"
+          alt="Imagem de um coração preenchido"
+        />
+        <img
+          id="coracao-3"
+          src="./assets/coracao_cheio.png"
+          alt="Imagem de um coração preenchido"
+        />
+      </section>
+      <section class="cronometro">
+        Tempo restante: <span id="cronometro"></span>
+      </section>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
